@@ -1,2 +1,2 @@
 #!/usr/bin/env python3
-print("{}".format("".join([c for c in "abcdefghijklmnopqrstuvwxyz" if c not in "qe"])))
+print("{}".format("".join([chr(i) for i in range(97, 123) if chr(i) not in "qe"])))
