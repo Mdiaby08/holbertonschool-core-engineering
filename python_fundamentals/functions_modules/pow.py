@@ -12,4 +12,3 @@ def pow(a, b):
         result = 1 / result
 
     return result
-
