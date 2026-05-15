@@ -32,10 +32,10 @@ class Circle(Shape):
     def area(self):
         """Retourne l'aire du cercle."""
         return math.pi * self.radius ** 2
+        
+def perimeter(self):
+    return 2 * math.pi * abs(self.radius)
 
-    def perimeter(self):
-        """Retourne le périmètre (circonférence) du cercle."""
-        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
