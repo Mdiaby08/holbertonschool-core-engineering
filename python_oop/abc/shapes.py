@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
-"""Module définissant des formes géométriques et une fonction duck-typed."""
-from abc import ABC, abstractmethod
+"""Defines a Circle class."""
 import math
+from shape import Shape   # ou BaseGeometry selon ton projet
 
 
-class Shape(ABC):
-    """Classe abstraite représentant une forme géométrique."""
+class Circle(Shape):
+    """Represents a circle."""
 
-    @abstractmethod
+    def __init__(self, radius):
+        self.radius = radius
+
     def area(self):
-        """Méthode abstraite : retourne l'aire de la forme."""
-        pass
+        """Return the area of the circle."""
+        return math.pi * (abs(self.radius) ** 2)
 
-    @abstractmethod
     def perimeter(self):
-        """Méthode abstraite : retourne le périmètre de la forme."""
-        pass
+        """Return the perimeter (circumference) of the circle."""
+        return 2 * math.pi * abs(self.radius)
 
 
 class Circle(Shape):
