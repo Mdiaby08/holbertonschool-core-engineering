@@ -1,41 +1,21 @@
 #!/usr/bin/env python3
-"""Defines a Rectangle class."""
+"""Defines a Rectangle class that inherits from BaseGeometry."""
+BaseGeometry = __import__('base_geometry').BaseGeometry
 
-class Rectangle:
-    """Represents a rectangle with width and height."""
-    def __init__(self, width=0, height=0):
-        """Initialize the rectangle with width and height."""
-        self.width = width
-        self.height = height
 
-    @property
-    def width(self):
-        """Retrieve the width of the rectangle."""
-        return self.__width
+class Rectangle(BaseGeometry):
+    """Represents a rectangle using BaseGeometry."""
 
-    @width.setter
-    def width(self, value):
-        """Set the width of the rectangle with validation."""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
+    def __init__(self, width, height):
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
 
-        self.__width = value
+    def area(self):
+        """Returns the area of the rectangle."""
+        return self.__width * self.__height
 
-    @property
-    def height(self):
-        """Retrieve the height of the rectangle."""
-        return self.__height
-    
-    @height.setter
-    def height(self, value):
-        """Set the height of the rectangle with validation."""
-
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-
-        if value < 0:
-            raise ValueError("height must be >= 0")
-
-        self.__height = value
+    def __str__(self):
+        """String representation: [Rectangle] <width>/<height>"""
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
