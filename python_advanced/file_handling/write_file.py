@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """
-Write a function that writes a string to a text file (UTF-8) and returns the number of characters written:
+Module for writing text to a file.
 """
 
-def write_file(filename="", text=""):
-    """Writes a string to a text file (UTF-8) and returns the number of characters written"""
-    if filename == "":
-        return
 
+def write_file(filename="", text=""):
+    """Writes a string to a text file (UTF-8) and returns the number of characters written."""
     with open(filename, "w", encoding="utf-8") as f:
-        print(f.write()(), end="")
+        return f.write(text)
