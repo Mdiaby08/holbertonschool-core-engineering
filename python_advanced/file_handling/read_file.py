@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-read_file = __import__('read_file').read_file
+"""
+Reads a text file (UTF8) and prints its content to stdout.
+"""
 
 
-with open('my_file_0.txt', "r", encoding= "utf8")as f:
-    read_file = f.read()
+def read_file(filename=""):
+    """Read a UTF8 text file and print its content."""
+    if filename == "":
+        return
 
-    f.closed
-True
+    with open(filename, "r", encoding="utf-8") as f:
+        print(f.read(), end="")
